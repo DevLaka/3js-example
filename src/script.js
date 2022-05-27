@@ -17,10 +17,17 @@ const mesh = new THREE.Mesh(geometry, material);
 
 // Step 10 - All objects inhertis from Object3D contains
 // postion, scale, properties.
-// Moving a Mesh
+// Moving a Mesh using position.
 // mesh.position.y = 1;
 // mesh.position.x = 1;
 // mesh.position.z = -0.7;
+
+// Step 14 - Scale
+// Scaling a Mesh.
+// mesh.scale.x = 2;
+// mesh.scale.y = 0.5;
+// mesh.scale.z = 0.5;
+mesh.scale.set(2, 0.5, 0.5);
 
 // Step 13 - Part I - Set x, y, z at once.
 mesh.position.set(1, 1, -0.7);
