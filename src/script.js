@@ -22,12 +22,23 @@ const mesh = new THREE.Mesh(geometry, material);
 // mesh.position.x = 1;
 // mesh.position.z = -0.7;
 
-// Step 14 - Scale
+// Step 14 - Scale.
 // Scaling a Mesh.
 // mesh.scale.x = 2;
 // mesh.scale.y = 0.5;
 // mesh.scale.z = 0.5;
 mesh.scale.set(2, 0.5, 0.5);
+
+// Step 16 - Rotation order
+mesh.rotation.reorder("yxz");
+
+// Step 15 - Rotation.
+// mesh.rotation.y = 0.5;
+// Half a rotation. Set the value PI.
+// mesh.rotation.y = Math.PI;
+// Qater totation.
+mesh.rotation.y = Math.PI * 0.5;
+mesh.rotation.x = Math.PI * 0.25;
 
 // Step 13 - Part I - Set x, y, z at once.
 mesh.position.set(1, 1, -0.7);
@@ -59,6 +70,10 @@ const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height);
 // Step 08 - Move the camera back.
 camera.position.z = 3;
 scene.add(camera);
+
+// Step 17 - look at
+// camera.lookAt(new THREE.Vector3(2,0,0))
+camera.lookAt(mesh.position);
 
 // Step 11 - part II
 // Distance from object to the camera.
