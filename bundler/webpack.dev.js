@@ -20,7 +20,6 @@ module.exports = merge(commonConfiguration, {
     disableHostCheck: true,
     overlay: true,
     noInfo: true,
-    cache: false,
     after: function (app, server, compiler) {
       const port = server.options.port;
       const https = server.options.https ? "s" : "";
