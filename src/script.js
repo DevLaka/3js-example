@@ -45,6 +45,24 @@ window.addEventListener("resize", () => {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 });
 
+window.addEventListener("dblclick", () => {
+  const fullscreenElement =
+    document.fullscreenElement || document.webkitFullScreenElement;
+  if (!fullscreenElement) {
+    if (canvas.requestFullscreen) {
+      canvas.requestFullscreen();
+    } else if (canvas.webkitRequestFullScreen) {
+      canvas.webkitRequestFullScreen();
+    }
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullScreen) {
+      document.webkitExitFullScreen();
+    }
+  }
+});
+
 // Perspective camera.
 const camera = new THREE.PerspectiveCamera(
   75,
