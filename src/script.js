@@ -2,16 +2,6 @@ import "./style.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
-// Cursor
-const cursor = {
-  x: 0,
-  y: 0,
-};
-window.addEventListener("mousemove", (event) => {
-  cursor.x = event.clientX / sizes.width - 0.5;
-  cursor.y = -(event.clientY / sizes.height - 0.5);
-});
-
 // Canvas
 const canvas = document.querySelector(".webgl");
 
@@ -77,7 +67,6 @@ scene.add(camera);
 
 // Controls
 const controls = new OrbitControls(camera, canvas);
-
 controls.enableDamping = true;
 
 // Renderer.
