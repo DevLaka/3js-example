@@ -10,8 +10,8 @@ const scene = new THREE.Scene();
 
 // Object
 const mesh = new THREE.Mesh(
-  new THREE.BoxGeometry(1, 1, 1, 5, 5, 5),
-  new THREE.MeshBasicMaterial({ color: 0xf24c4c })
+  new THREE.BoxGeometry(1, 1, 1, 2, 2, 2),
+  new THREE.MeshBasicMaterial({ color: 0xf24c4c, wireframe: true })
 );
 scene.add(mesh);
 
