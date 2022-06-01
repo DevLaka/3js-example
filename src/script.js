@@ -15,7 +15,7 @@ const scene = new THREE.Scene();
 // );
 // scene.add(mesh);
 
-const geometry = new THREE.BoxBufferGeometry(1, 1, 1, 2, 2, 2);
+// const geometry = new THREE.BoxBufferGeometry(1, 1, 1, 2, 2, 2);
 // const vertex1 = new THREE.Vector3(0, 0, 0);
 // geometry.vertices.push(vertex1);
 
@@ -43,6 +43,35 @@ const geometry = new THREE.BoxBufferGeometry(1, 1, 1, 2, 2, 2);
 //     new THREE.Face3(verticesIndex, verticesIndex + 1, verticesIndex + 2)
 //   );
 // }
+
+// const geometry = new THREE.BufferGeometry();
+// const positionsArray = new Float32Array(9);
+// positionsArray[0] = 0
+// positionsArray[1] = 0
+// positionsArray[2] = 0
+
+// positionsArray[3] = 0
+// positionsArray[4] = 1
+// positionsArray[5] = 0
+
+// positionsArray[6] = 1
+// positionsArray[7] = 0
+// positionsArray[8] = 0
+
+// const positionsArray = new Float32Array([0, 0, 0, 0, 1, 0, 1, 0, 0]);
+// // convert float32Array to BufferAttribute
+// const positionsAttribute = new THREE.BufferAttribute(positionsArray, 3);
+// geometry.setAttribute('position', positionsAttribute);
+
+const geometry = new THREE.BufferGeometry();
+const count = 100;
+const positionsArray = new Float32Array(count * 3 * 3);
+
+for (let i = 0; i < count * 3 * 3; i++) {
+  positionsArray[i] = (Math.random() - 0.5) * 4;
+}
+const positionsAttribute = new THREE.BufferAttribute(positionsArray, 3);
+geometry.setAttribute("position", positionsAttribute);
 
 const material = new THREE.MeshBasicMaterial({
   color: 0xf24c4c,
