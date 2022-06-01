@@ -39,19 +39,12 @@ const camera = new THREE.PerspectiveCamera(
   100
 );
 
-// Orthographic camera.
-// const aspectRatio = sizes.width / sizes.height;
-// const camera = new THREE.OrthographicCamera(-1 * aspectRatio, 1 * aspectRatio, 1, -1, 0.1, 100);
-// camera.position.x = 2;
-// camera.position.y = 2;
 camera.position.z = 3;
 camera.lookAt(mesh.position);
 scene.add(camera);
 
 // Controls
 const controls = new OrbitControls(camera, canvas);
-// controls.target.y = 1;
-// controls.update();
 
 controls.enableDamping = true;
 
@@ -66,18 +59,6 @@ const clock = new THREE.Clock();
 
 // Animations.
 const tick = () => {
-  // Clock
-  // const elapsedTime = clock.getElapsedTime();
-
-  // Update objects
-  // mesh.rotation.y = elapsedTime;
-
-  // Update camera
-  // camera.position.x = Math.sin(cursor.x * Math.PI * 2) * 2;
-  // camera.position.z = Math.cos(cursor.x * Math.PI * 2) * 2;
-  // camera.position.y = cursor.y * 5;
-  // camera.lookAt(mesh.position);
-
   // Update controls
   controls.update();
 
