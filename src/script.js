@@ -15,7 +15,7 @@ const scene = new THREE.Scene();
 // );
 // scene.add(mesh);
 
-const geometry = new THREE.Geometry();
+const geometry = new THREE.BoxBufferGeometry(1, 1, 1, 2, 2, 2);
 // const vertex1 = new THREE.Vector3(0, 0, 0);
 // geometry.vertices.push(vertex1);
 
@@ -28,21 +28,21 @@ const geometry = new THREE.Geometry();
 // const face = new THREE.Face3(0, 1, 2);
 // geometry.faces.push(face);
 
-for (let i = 0; i < 50; i++) {
-  for (let j = 0; j < 3; j++) {
-    geometry.vertices.push(
-      new THREE.Vector3(
-        (Math.random() - 0.5) * 4,
-        (Math.random() - 0.5) * 4,
-        (Math.random() - 0.5) * 4
-      )
-    );
-  }
-  const verticesIndex = i * 3;
-  geometry.faces.push(
-    new THREE.Face3(verticesIndex, verticesIndex + 1, verticesIndex + 2)
-  );
-}
+// for (let i = 0; i < 50; i++) {
+//   for (let j = 0; j < 3; j++) {
+//     geometry.vertices.push(
+//       new THREE.Vector3(
+//         (Math.random() - 0.5) * 4,
+//         (Math.random() - 0.5) * 4,
+//         (Math.random() - 0.5) * 4
+//       )
+//     );
+//   }
+//   const verticesIndex = i * 3;
+//   geometry.faces.push(
+//     new THREE.Face3(verticesIndex, verticesIndex + 1, verticesIndex + 2)
+//   );
+// }
 
 const material = new THREE.MeshBasicMaterial({
   color: 0xf24c4c,
